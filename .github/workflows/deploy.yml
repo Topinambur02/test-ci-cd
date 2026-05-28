@@ -70,7 +70,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           sync: true
           script_stop: true
-          fingerprint: "yes"
+          # fingerprint: "yes"
           script: |
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             

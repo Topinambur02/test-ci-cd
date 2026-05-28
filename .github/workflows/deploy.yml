@@ -72,6 +72,10 @@ jobs:
           script_stop: true
           # fingerprint: "yes"
           script: |
+            cd /home/topinambur02/test-ci-cd
+
+            git pull origin main
+
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             
             export IMAGE_NAME="${{ env.IMAGE_NAME }}:latest"

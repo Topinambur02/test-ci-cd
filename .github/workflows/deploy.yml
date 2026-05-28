@@ -68,6 +68,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: 7000
           key: ${{ secrets.SSH_KEY }}
+          sync: true
+          script_stop: true
+          fingerprint: ""
           script: |
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
             

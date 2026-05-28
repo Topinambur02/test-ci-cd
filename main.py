@@ -6,11 +6,10 @@ from fastapi import FastAPI
 
 import uvicorn
 
-
 app = FastAPI()
 
 
-@app.post('/')
+@app.post("/")
 async def calculate_two_numbers(dto: TwoNumbersDto) -> ResultDto:
     message = "The program added two numbers"
     result = adding_two_numbers(a=dto.a, b=dto.b)
